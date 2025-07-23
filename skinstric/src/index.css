@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'roobertTrial';
+    src: url("./assets/fonts/RoobertTRIAL-Regular-BF67243fd53fdf2.otf");
+}
+@import "tailwindcss";
+
+@theme {
+
+    --font-roobertTrial: roobertTrial, "regular", sans-serif;
+
+    --animate-spin1: spin 60s linear infinite;
+
+    @keyframes spin1 {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    --animate-spin2: spin 90s linear infinite;
+
+    @keyframes spin2 {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    --animate-spin3: spin 100s linear infinite;
+
+    @keyframes spin3 {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
