@@ -37,7 +37,6 @@ const InfoBox = () => {
         }, 4000);
       } catch (err) {
         setLoading(false);
-        // handle error here
       }
     }
   };
