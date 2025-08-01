@@ -134,7 +134,7 @@ const PhotoPage = () => {
             <img
               src="/camera-icon.png"
               alt="Camera Icon"
-              className="w-36 h-36 z-40 relative cursor-pointer"
+              className="w-36 h-36 z-40 relative cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
               onClick={handleCameraClick}
             />
             {showCamera && (
