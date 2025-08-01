@@ -39,11 +39,11 @@ const Intro = () => {
           } ${discoverHovered ? 'transform translate-x-3/5 opacity-100 text-end' : 'opacity-100'}`}
         >
           <p
-            className="text-[108px] font-roobertTrial"
+            className="text-[100px] font-roobertTrial"
             data-aos="fade-in"
             data-aos-delay="300"
             data-aos-duration="3000">Sophisticated</p>
-            <p className="text-[108px] font-roobertTrial -mt-2"
+            <p className="text-[100px] font-roobertTrial -mt-2"
             data-aos="fade-in"
             data-aos-delay="300"
             data-aos-duration="3000">skincare</p>
@@ -70,7 +70,7 @@ const Intro = () => {
             </Link>
         </div>
 
-        <div className="absolute bottom-0 left-4 text-[#1A1B1C] text-[16px] uppercase font-semibold font-roobertTrial">
+        <div className="absolute bottom-0 left-4 text-[#1A1B1C] text-[13px] uppercase font-semibold font-roobertTrial">
           skinstric developed an a.i. that creates <br /> a highly-personalized routine tailored to <br /> what your skin needs.
         </div>
       </main>
