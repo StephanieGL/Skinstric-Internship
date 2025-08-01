@@ -1,17 +1,13 @@
-const Diamond = ({ label, className = '', onClick, onMouseEnter, onMouseLeave, interactive = false }) => (
+import React from "react";
+
+const Diamond = ({ label, className = "", ...props }) => (
   <div
-    className={`relative flex items-center justify-center rotate-45 w-52 h-52 overflow-clip border-2 border-gray-300 bg-gradient-to-br from-white to-gray-100 shadow ${interactive ? 'cursor-pointer' : 'cursor-not-allowed'} ${className}`}
-    onClick={onClick}
-    onMouseEnter={onMouseEnter}
-    onMouseLeave={onMouseLeave}
-    style={{ transition: 'transform 0.4s linear' }}
+    className={`w-48 h-48 bg-[#f7f8fa] flex items-center justify-center shadow-md rotate-45 ${className}`}
+    {...props}
   >
-    <div
-      className="absolute inset-0 flex items-center justify-center -rotate-45"
-      style={{ pointerEvents: 'none' }}
-    >
-      <span className="text-2xl font-bold text-gray-700 select-none">{label}</span>
-    </div>
+    <span className="block w-40 text-center font-roobertTrial font-semibold text-lg text-black -rotate-45 select-none leading-tight">
+      {label}
+    </span>
   </div>
 );
 

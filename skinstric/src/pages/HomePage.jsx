@@ -34,19 +34,34 @@ const Intro = () => {
         </div>
 
         <section
-          className={`text-center transition-all duration-1000 ease-in-out -mt-4 leading-tight ${
-            testHovered ? 'transform -translate-x-3/5 opacity-100 text-start' : 'opacity-100'
-          } ${discoverHovered ? 'transform translate-x-3/5 opacity-100 text-end' : 'opacity-100'}`}
+          className={`
+            text-center leading-tight -mt-4
+            transition-all duration-700 ease-in-out
+            ${
+              testHovered
+                ? 'translate-x-[-30%] text-left'
+                : discoverHovered
+                ? 'translate-x-[30%] text-right'
+                : 'translate-x-0 text-center'
+            }
+          `}
         >
           <p
             className="text-[100px] font-roobertTrial"
             data-aos="fade-in"
             data-aos-delay="300"
-            data-aos-duration="3000">Sophisticated</p>
-            <p className="text-[100px] font-roobertTrial -mt-2"
+            data-aos-duration="3000"
+          >
+            Sophisticated
+          </p>
+          <p
+            className="text-[100px] font-roobertTrial -mt-2"
             data-aos="fade-in"
             data-aos-delay="300"
-            data-aos-duration="3000">skincare</p>
+            data-aos-duration="3000"
+          >
+            skincare
+          </p>
         </section>
         <div className={`fixed -right-0 top-1/2 transform -translate-y-1/2 transition-all duration-500 ${discoverHovered ? 'opacity-0' : 'opacity-100'}`}>
           <img

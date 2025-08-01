@@ -1,5 +1,5 @@
 import Age from "../components/Summary/Age"
-import BackButton from "../components/info/BackButton"
+import BackButton3 from "../components/Summary/BackButton3"
 import Header from "../components/home/Header"
 import Race from "../components/Summary/Race"
 import Gender from "../components/Summary/Gender"
@@ -214,7 +214,7 @@ const SummaryPage = () => {
 
       <footer className="relative">
         <div className="absolute -bottom-24.5 left-9 flex items-center">
-          <BackButton />
+          <BackButton3 />
         </div>
         <div className="absolute -bottom-24.5 right-9 flex items-center">
           <HomeButton />

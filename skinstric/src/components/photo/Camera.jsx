@@ -1,17 +1,16 @@
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Camera = ({ onCapture, onClose }) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
-  const streamRef = useRef(null); 
+  let streamRef = useRef(null); 
   const [captured, setCaptured] = useState(false);
 
   useEffect(() => {
     const getCamera = async () => {
       try {
         const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        streamRef.current = stream; // Store the stream in the ref
-
+        streamRef.current = stream;
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
         }
@@ -26,6 +25,9 @@ const Camera = ({ onCapture, onClose }) => {
       if (streamRef.current) {
         streamRef.current.getTracks().forEach(track => track.stop());
       }
+      if (videoRef.current) {
+        videoRef.current.srcObject = null;
+      }
     };
   }, [onClose]);
 
@@ -34,13 +36,15 @@ const Camera = ({ onCapture, onClose }) => {
       const context = canvasRef.current.getContext("2d");
       context.drawImage(videoRef.current, 0, 0, 320, 240);
       const dataUrl = canvasRef.current.toDataURL("image/png");
-      
       setCaptured(true);
       onCapture && onCapture(dataUrl);
 
       // Stop the stream after taking a photo
       if (streamRef.current) {
         streamRef.current.getTracks().forEach(track => track.stop());
+      }
+      if (videoRef.current) {
+        videoRef.current.srcObject = null;
       }
     }
   };
@@ -49,7 +53,10 @@ const Camera = ({ onCapture, onClose }) => {
     if (streamRef.current) {
       streamRef.current.getTracks().forEach(track => track.stop());
     }
-    onClose(); 
+    if (videoRef.current) {
+      videoRef.current.srcObject = null;
+    }
+    onClose();
   }
 
   return (
